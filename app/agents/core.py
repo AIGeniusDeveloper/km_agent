@@ -22,11 +22,26 @@ def get_session_history(session_id: str) -> BaseChatMessageHistory:
     return store[session_id]
 
 class AgentCore:
-    def __init__(self):
-        self.router = SectorRouter()
-        self.translator = ContextualTranslator()
-        self.retriever = LocalKnowledgeRetriever()
-        self.simulator = TaskSimulator()
+    def __init__(
+        self,
+        router: SectorRouter,
+        retriever: LocalKnowledgeRetriever,
+        simulator: TaskSimulator,
+        translator: ContextualTranslator = None
+    ):
+        """
+        Initialize AgentCore with injected dependencies.
+        
+        Args:
+            router: SectorRouter instance for query classification
+            retriever: LocalKnowledgeRetriever for RAG
+            simulator: TaskSimulator for training scenarios
+            translator: Optional ContextualTranslator for multilingual support
+        """
+        self.router = router
+        self.translator = translator or ContextualTranslator()
+        self.retriever = retriever
+        self.simulator = simulator
         
         # Initialize LLM for response generation (higher temp for creativity)
         self.llm = get_llm(temperature=0.3, model_name="gemini-1.5-flash-001")

@@ -5,8 +5,11 @@ from langchain_core.output_parsers import PydanticOutputParser
 from langchain_google_genai import ChatGoogleGenerativeAI
 from app.core.config import get_settings
 from app.core.llm_factory import get_llm
+from app.core.exceptions import SectorRoutingError
+import logging
 
 settings = get_settings()
+logger = logging.getLogger(__name__)
 
 class SectorRoute(BaseModel):
     """Route the user query to the most appropriate sector."""
@@ -39,10 +42,10 @@ class SectorRouter:
 
     async def route_query(self, query: str) -> SectorRoute:
         try:
-            return await self.chain.ainvoke({"query": query})
+            logger.info(f"Routing query: {query[:50]}...")
+            result = await self.chain.ainvoke({"query": query})
+            logger.info(f"Routed to sector: {result.sector} (confidence: {result.confidence})")
+            return result
         except Exception as e:
-            # Fallback for errors
-            print(f"Routing error details: {str(e)}")
-            import traceback
-            traceback.print_exc()
-            return SectorRoute(sector="general", confidence=0.0, reasoning=f"Error in routing: {str(e)}")
+            logger.error(f"Routing failed: {str(e)}", exc_info=True)
+            raise SectorRoutingError(f"Failed to route query: {str(e)}") from e

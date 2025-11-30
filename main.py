@@ -2,6 +2,14 @@ from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
 from app.core.config import get_settings
 from app.agents.core import AgentCore
+from app.agents.orchestrator import SectorRouter
+from app.agents.translator import ContextualTranslator
+from app.rag.retriever import LocalKnowledgeRetriever
+from app.tools.simulator import TaskSimulator
+from app.core.exceptions import SectorRoutingError, RAGRetrievalError, LLMError
+import logging
+
+logger = logging.getLogger(__name__)
 
 settings = get_settings()
 
@@ -11,7 +19,19 @@ app = FastAPI(
     openapi_url=f"{settings.API_V1_STR}/openapi.json"
 )
 
-agent_core = AgentCore()
+# Dependency Injection: Create dependencies explicitly
+sector_router = SectorRouter()
+knowledge_retriever = LocalKnowledgeRetriever()
+task_simulator = TaskSimulator()
+translator = ContextualTranslator()
+
+# Inject dependencies into AgentCore
+agent_core = AgentCore(
+    router=sector_router,
+    retriever=knowledge_retriever,
+    simulator=task_simulator,
+    translator=translator
+)
 
 class ChatRequest(BaseModel):
     query: str
@@ -37,8 +57,15 @@ async def chat(request: ChatRequest):
             image_base64=request.image_base64
         )
         return result
+    except SectorRoutingError as e:
+        raise HTTPException(status_code=422, detail={"error": "routing_failed", "message": str(e)})
+    except RAGRetrievalError as e:
+        raise HTTPException(status_code=503, detail={"error": "retrieval_failed", "message": str(e)})
+    except LLMError as e:
+        raise HTTPException(status_code=503, detail={"error": "llm_failed", "message": str(e)})
     except Exception as e:
-        raise HTTPException(status_code=500, detail=str(e))
+        logger.error(f"Unexpected error in /chat: {str(e)}", exc_info=True)
+        raise HTTPException(status_code=500, detail={"error": "internal_error", "message": "An unexpected error occurred"})
 
 class SimulationStartRequest(BaseModel):
     sector: str
