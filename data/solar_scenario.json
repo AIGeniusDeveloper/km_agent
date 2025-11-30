@@ -1,0 +1,34 @@
+{
+    "id": "solar_maintenance_001",
+    "sector": "solar",
+    "title": "Solar Panel Cleaning & Inspection",
+    "description": "Perform a routine cleaning and inspection of a solar panel array.",
+    "steps": [
+        {
+            "step_id": 1,
+            "instruction": "First, ensure safety before starting any work. What should you do?",
+            "expected_action": "Turn off the system / Disconnect power",
+            "keywords": [
+                "turn off",
+                "disconnect",
+                "shutdown",
+                "power off"
+            ],
+            "success_feedback": "Correct! Always disconnect the system to prevent electrical shock.",
+            "failure_feedback": "Incorrect. Safety first! You must disconnect the power source."
+        },
+        {
+            "step_id": 2,
+            "instruction": "Now that the system is off, inspect the panels. You see a layer of dust. How do you clean it?",
+            "expected_action": "Use water and a soft brush",
+            "keywords": [
+                "water",
+                "soft brush",
+                "sponge",
+                "hose"
+            ],
+            "success_feedback": "Good. Using water and a soft brush prevents scratching the glass.",
+            "failure_feedback": "Avoid abrasive materials or harsh chemicals. Use water and a soft brush."
+        }
+    ]
+}
