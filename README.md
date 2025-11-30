@@ -4,7 +4,7 @@
 ![Python](https://img.shields.io/badge/Python-3.10%2B-blue)
 ![FastAPI](https://img.shields.io/badge/FastAPI-0.109-green)
 ![LangChain](https://img.shields.io/badge/LangChain-0.1-orange)
-![Gemini](https://img.shields.io/badge/AI-Gemini%201.5%20Flash-purple)
+![Gemini](https://img.shields.io/badge/AI-Gemini%202.5%20Pro-purple)
 
 **KM-Agent** est un agent IA conversationnel, modulaire et multi-secteurs conçu pour fournir une assistance technique, un diagnostic et une formation professionnelle en Afrique.
 
@@ -69,7 +69,7 @@ L'architecture de KM-Agent V2 est conçue pour **faciliter le remplacement** des
 
 - **Backend** : FastAPI (Python)
 - **Orchestration** : LangChain
-- **LLM** : Google Gemini 1.5 Flash (via `langchain-google-genai`)
+- **LLM** : Google Gemini 2.5 Pro (via `langchain-google-genai`)
 - **Vector DB** : ChromaDB (Local)
 - **Simulation** : Moteur de scénarios JSON pour la formation.
 
