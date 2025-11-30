@@ -42,6 +42,29 @@ Ce MVP cible initialement quatre secteurs prioritaires : **Énergie Solaire**, *
 
 ---
 
+## 🏗️ Architecture Modulaire
+
+L'architecture de KM-Agent V2 est conçue pour **faciliter le remplacement** des services tiers sans casser le code :
+
+### Remplacement du LLM (Gemini → Claude/OpenAI/Mistral)
+- **Point d'entrée unique** : `app/core/llm_factory.py`
+- Modifiez uniquement la factory, tous les composants s'adaptent automatiquement
+- Support multi-LLM possible (ex: Gemini pour routing, Claude pour génération)
+
+### Remplacement Voice (Google Cloud → Whisper/ElevenLabs)
+- **Abstraction** : `app/api/voice.py`
+- Fonctions ASR/TTS isolées, API REST inchangée
+- Le frontend reste compatible
+
+### Remplacement Vector DB (ChromaDB → Pinecone/Weaviate)
+- **Interface** : `app/rag/retriever.py`
+- Méthodes `retrieve()` et `add_documents()` standardisées
+- `AgentCore` ne voit aucune différence
+
+**Principe** : Dependency Injection + Abstraction = Flexibilité maximale
+
+---
+
 ## 🛠️ Architecture Technique
 
 - **Backend** : FastAPI (Python)
