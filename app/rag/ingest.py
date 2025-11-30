@@ -12,7 +12,9 @@ def ingest_data():
     data_dir = os.path.join(current_dir, "../../data")
     files = {
         "solar": "solar_data.md",
-        "mechanics": "mechanics_data.md"
+        "mechanics": "mechanics_data.md",
+        "agritech": "agritech_data.md",
+        "construction": "construction_data.md"
     }
 
     documents = []

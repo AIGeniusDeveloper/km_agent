@@ -10,3 +10,5 @@ chromadb
 python-multipart
 python-dotenv
 requests
+google-cloud-speech
+google-cloud-texttospeech

@@ -7,6 +7,7 @@ from app.agents.translator import ContextualTranslator
 from app.rag.retriever import LocalKnowledgeRetriever
 from app.tools.simulator import TaskSimulator
 from app.core.exceptions import SectorRoutingError, RAGRetrievalError, LLMError
+from app.api.voice import router as voice_router
 import logging
 
 logger = logging.getLogger(__name__)
@@ -18,6 +19,9 @@ app = FastAPI(
     version=settings.VERSION,
     openapi_url=f"{settings.API_V1_STR}/openapi.json"
 )
+
+# Include voice router
+app.include_router(voice_router)
 
 # Dependency Injection: Create dependencies explicitly
 sector_router = SectorRouter()

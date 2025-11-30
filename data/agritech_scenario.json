@@ -1,0 +1,46 @@
+{
+    "id": "agritech_tomato_disease_001",
+    "sector": "agritech",
+    "title": "Diagnosing Tomato Leaf Disease",
+    "description": "Identify and treat a common tomato disease based on symptoms.",
+    "steps": [
+        {
+            "step_id": 1,
+            "instruction": "You notice brown spots with yellow halos on your tomato leaves. What disease is this likely to be?",
+            "expected_action": "Early blight or Late blight",
+            "keywords": [
+                "blight",
+                "early blight",
+                "late blight",
+                "fungal"
+            ],
+            "success_feedback": "Correct! This is a classic symptom of blight, a fungal disease.",
+            "failure_feedback": "Incorrect. Brown spots with yellow halos are characteristic of blight."
+        },
+        {
+            "step_id": 2,
+            "instruction": "What is the first action you should take to prevent spread?",
+            "expected_action": "Remove affected leaves",
+            "keywords": [
+                "remove",
+                "cut",
+                "prune",
+                "dispose"
+            ],
+            "success_feedback": "Good! Removing infected leaves prevents spores from spreading.",
+            "failure_feedback": "You should remove affected leaves immediately to stop the disease from spreading."
+        },
+        {
+            "step_id": 3,
+            "instruction": "What treatment should you apply to the remaining plants?",
+            "expected_action": "Apply copper fungicide",
+            "keywords": [
+                "copper",
+                "fungicide",
+                "spray"
+            ],
+            "success_feedback": "Excellent! Copper-based fungicides are effective against blight.",
+            "failure_feedback": "Copper fungicide is the recommended treatment for blight."
+        }
+    ]
+}

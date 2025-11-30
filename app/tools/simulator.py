@@ -17,14 +17,22 @@ class TaskSimulator:
     def _load_scenarios(self) -> Dict[str, Scenario]:
         scenarios = {}
         data_dir = os.path.join(os.getcwd(), "km_agent/data")
-        # Load all json files in data dir that look like scenarios
-        # For MVP, just load solar_scenario.json
-        scenario_path = os.path.join(data_dir, "solar_scenario.json")
-        if os.path.exists(scenario_path):
-            with open(scenario_path, "r") as f:
-                data = json.load(f)
-                scenario = Scenario(**data)
-                scenarios[scenario.id] = scenario
+        
+        # Load all scenario files
+        scenario_files = [
+            "solar_scenario.json",
+            "agritech_scenario.json",
+            "construction_scenario.json"
+        ]
+        
+        for filename in scenario_files:
+            scenario_path = os.path.join(data_dir, filename)
+            if os.path.exists(scenario_path):
+                with open(scenario_path, "r") as f:
+                    data = json.load(f)
+                    scenario = Scenario(**data)
+                    scenarios[scenario.id] = scenario
+        
         return scenarios
 
     def get_scenario(self, sector: str) -> Scenario:

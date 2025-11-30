@@ -1,0 +1,45 @@
+{
+    "id": "construction_foundation_001",
+    "sector": "construction",
+    "title": "Calculating Concrete Mix for Foundation",
+    "description": "Calculate the correct concrete mix ratio and quantity for a strip foundation.",
+    "steps": [
+        {
+            "step_id": 1,
+            "instruction": "You need to pour a strip foundation 10m long, 0.6m wide, and 1m deep. What is the volume of concrete needed?",
+            "expected_action": "6 cubic meters",
+            "keywords": [
+                "6",
+                "six",
+                "cubic",
+                "m3",
+                "m³"
+            ],
+            "success_feedback": "Correct! Volume = 10m × 0.6m × 1m = 6m³",
+            "failure_feedback": "Calculate: Length × Width × Depth = 10 × 0.6 × 1 = 6 cubic meters"
+        },
+        {
+            "step_id": 2,
+            "instruction": "What is the standard mix ratio for foundation concrete?",
+            "expected_action": "1:2:4 (cement:sand:gravel)",
+            "keywords": [
+                "1:2:4",
+                "1-2-4",
+                "one two four"
+            ],
+            "success_feedback": "Excellent! 1:2:4 is the standard ratio for foundations.",
+            "failure_feedback": "The standard foundation mix is 1:2:4 (cement:sand:gravel)."
+        },
+        {
+            "step_id": 3,
+            "instruction": "For 6m³ of concrete, approximately how many 50kg bags of cement do you need?",
+            "expected_action": "60 bags",
+            "keywords": [
+                "60",
+                "sixty"
+            ],
+            "success_feedback": "Correct! Approximately 10 bags per cubic meter × 6m³ = 60 bags.",
+            "failure_feedback": "You need about 10 bags of cement per cubic meter, so 6m³ requires 60 bags."
+        }
+    ]
+}
