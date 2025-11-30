@@ -13,7 +13,7 @@ logger = logging.getLogger(__name__)
 
 class SectorRoute(BaseModel):
     """Route the user query to the most appropriate sector."""
-    sector: Literal["solar", "mechanics", "agritech", "construction", "general"] = Field(
+    sector: Literal["solar", "mechanics", "agritech", "construction", "education", "water", "environment", "transport", "general"] = Field(
         ...,
         description="The sector that best matches the user query. Use 'general' if it doesn't fit any specific sector."
     )
@@ -25,14 +25,16 @@ class SectorRoute(BaseModel):
 class SectorRouter:
     def __init__(self):
         # Using Gemini Flash (or Pro if configured) for routing with low temp
-        self.llm = get_llm(temperature=0, model_name="gemini-1.5-flash-001")
+        self.llm = get_llm(temperature=0, model_name="gemini-2.5-pro")
         self.parser = PydanticOutputParser(pydantic_object=SectorRoute)
         
         self.prompt = ChatPromptTemplate.from_messages([
             ("system", "You are an expert router for a technical assistant. "
                        "Your job is to classify user queries into one of the following sectors: "
                        "Solar Energy (solar), Mechanics/Maintenance (mechanics), "
-                       "AgriTech (agritech), or ConstructionTech (construction). "
+                       "AgriTech (agritech), ConstructionTech (construction), "
+                       "Education/Training (education), Water & Sanitation (water), "
+                       "Environment (environment), or Transport (transport). "
                        "If the query is not related to these, or is a general greeting, use 'general'.\n"
                        "{format_instructions}"),
             ("user", "{query}")

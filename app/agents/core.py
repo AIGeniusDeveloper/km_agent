@@ -44,7 +44,7 @@ class AgentCore:
         self.simulator = simulator
         
         # Initialize LLM for response generation (higher temp for creativity)
-        self.llm = get_llm(temperature=0.3, model_name="gemini-1.5-flash-001")
+        self.llm = get_llm(temperature=0.3, model_name="gemini-2.5-pro")
         
         self.response_prompt = ChatPromptTemplate.from_messages([
             ("system", "You are an expert technical assistant for the {sector} sector. "

@@ -1,0 +1,47 @@
+{
+    "id": "education_classroom_001",
+    "sector": "education",
+    "title": "Gestion d'une Classe Surchargée",
+    "description": "Techniques pour gérer efficacement une classe de 60+ élèves.",
+    "steps": [
+        {
+            "step_id": 1,
+            "instruction": "Vous avez 60 élèves dans votre classe. Quelle est la première chose à mettre en place pour faciliter la gestion?",
+            "expected_action": "Établir des règles claires",
+            "keywords": [
+                "règles",
+                "règlement",
+                "discipline",
+                "cadre"
+            ],
+            "success_feedback": "Exact! Des règles claires (3-5 maximum) affichées visiblement sont essentielles.",
+            "failure_feedback": "La première étape est d'établir 3-5 règles claires et de les afficher."
+        },
+        {
+            "step_id": 2,
+            "instruction": "Comment pouvez-vous réduire le nombre d'interactions individuelles nécessaires?",
+            "expected_action": "Travail en groupe",
+            "keywords": [
+                "groupe",
+                "équipe",
+                "collaboratif",
+                "moniteurs"
+            ],
+            "success_feedback": "Parfait! Le travail en groupe et l'utilisation de moniteurs (élèves avancés) sont très efficaces.",
+            "failure_feedback": "Organisez le travail en groupe et utilisez des élèves avancés comme moniteurs."
+        },
+        {
+            "step_id": 3,
+            "instruction": "Quel outil pédagogique maximise l'apprentissage autonome avec peu de ressources?",
+            "expected_action": "Affiches pédagogiques",
+            "keywords": [
+                "affiche",
+                "mur",
+                "visuel",
+                "permanent"
+            ],
+            "success_feedback": "Excellent! Les affiches (alphabet, tables, cartes) permettent un apprentissage permanent.",
+            "failure_feedback": "Utilisez les murs pour afficher du contenu pédagogique permanent (alphabet, tables, etc.)."
+        }
+    ]
+}

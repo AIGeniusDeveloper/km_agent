@@ -1,0 +1,48 @@
+{
+    "id": "environment_composting_001",
+    "sector": "environment",
+    "title": "Création d'un Compost de Qualité",
+    "description": "Transformer les déchets organiques en engrais naturel.",
+    "steps": [
+        {
+            "step_id": 1,
+            "instruction": "Quel est le ratio idéal entre matériaux bruns (secs) et verts (humides)?",
+            "expected_action": "2/3 bruns, 1/3 verts",
+            "keywords": [
+                "2/3",
+                "deux tiers",
+                "bruns",
+                "secs"
+            ],
+            "success_feedback": "Correct! 2/3 de matériaux bruns (carbone) et 1/3 de verts (azote).",
+            "failure_feedback": "Le ratio idéal est 2/3 de matériaux bruns (feuilles sèches) et 1/3 de verts (épluchures)."
+        },
+        {
+            "step_id": 2,
+            "instruction": "Quels déchets NE doivent PAS aller dans le compost?",
+            "expected_action": "Viande, produits laitiers, huiles",
+            "keywords": [
+                "viande",
+                "laitier",
+                "huile",
+                "graisse",
+                "os"
+            ],
+            "success_feedback": "Exact! Évitez viande, produits laitiers et huiles qui attirent nuisibles et sentent mauvais.",
+            "failure_feedback": "Ne compostez pas: viande, produits laitiers, huiles (attirent nuisibles)."
+        },
+        {
+            "step_id": 3,
+            "instruction": "Combien de temps faut-il pour obtenir du compost mature?",
+            "expected_action": "3 à 6 mois",
+            "keywords": [
+                "3",
+                "6",
+                "mois",
+                "trimestre"
+            ],
+            "success_feedback": "Parfait! 3-6 mois selon conditions (température, retournement).",
+            "failure_feedback": "Il faut 3 à 6 mois pour obtenir du compost mature et utilisable."
+        }
+    ]
+}

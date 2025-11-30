@@ -1,0 +1,46 @@
+{
+    "id": "transport_maintenance_001",
+    "sector": "transport",
+    "title": "Maintenance Préventive d'un Véhicule",
+    "description": "Effectuer les contrôles essentiels pour éviter les pannes.",
+    "steps": [
+        {
+            "step_id": 1,
+            "instruction": "À quelle fréquence doit-on faire la vidange d'huile moteur?",
+            "expected_action": "Tous les 5000-10000 km",
+            "keywords": [
+                "5000",
+                "10000",
+                "5",
+                "10",
+                "km"
+            ],
+            "success_feedback": "Correct! Tous les 5000-10000 km selon le type d'huile et les conditions d'utilisation.",
+            "failure_feedback": "La vidange doit être faite tous les 5000-10000 km."
+        },
+        {
+            "step_id": 2,
+            "instruction": "Quel contrôle quotidien est le plus critique pour la sécurité?",
+            "expected_action": "Freins",
+            "keywords": [
+                "frein",
+                "freinage",
+                "plaquette"
+            ],
+            "success_feedback": "Exact! Tester les freins avant chaque départ est essentiel pour la sécurité.",
+            "failure_feedback": "Les freins doivent être testés quotidiennement avant le départ."
+        },
+        {
+            "step_id": 3,
+            "instruction": "Comment réduire la consommation de carburant de 5% facilement?",
+            "expected_action": "Vérifier pression des pneus",
+            "keywords": [
+                "pneu",
+                "pression",
+                "gonflage"
+            ],
+            "success_feedback": "Parfait! Des pneus correctement gonflés réduisent la consommation de 5%.",
+            "failure_feedback": "Maintenez la bonne pression des pneus (économie de 5% de carburant)."
+        }
+    ]
+}

@@ -1,0 +1,47 @@
+{
+    "id": "water_treatment_001",
+    "sector": "water",
+    "title": "Traitement d'Eau de Puits Contaminé",
+    "description": "Rendre l'eau d'un puits potable avec des méthodes simples.",
+    "steps": [
+        {
+            "step_id": 1,
+            "instruction": "L'eau de votre puits est trouble. Quelle est la première étape de traitement?",
+            "expected_action": "Filtration",
+            "keywords": [
+                "filtre",
+                "filtration",
+                "sable",
+                "tissu"
+            ],
+            "success_feedback": "Correct! Filtrer d'abord pour enlever les particules visibles.",
+            "failure_feedback": "Commencez par filtrer l'eau (tissu propre, sable) pour enlever les particules."
+        },
+        {
+            "step_id": 2,
+            "instruction": "Après filtration, quelle méthode simple tue tous les pathogènes?",
+            "expected_action": "Ébullition",
+            "keywords": [
+                "bouillir",
+                "ébullition",
+                "chauffer",
+                "feu"
+            ],
+            "success_feedback": "Parfait! Faire bouillir 1 minute tue tous les pathogènes.",
+            "failure_feedback": "Faites bouillir l'eau pendant 1 minute (3 minutes en altitude)."
+        },
+        {
+            "step_id": 3,
+            "instruction": "Si vous n'avez pas de combustible, quelle alternative chimique pouvez-vous utiliser?",
+            "expected_action": "Chloration",
+            "keywords": [
+                "chlore",
+                "javel",
+                "eau de javel",
+                "désinfection"
+            ],
+            "success_feedback": "Excellent! 2 gouttes d'eau de javel (5%) par litre, attendre 30 minutes.",
+            "failure_feedback": "Utilisez de l'eau de javel: 2 gouttes par litre, attendez 30 minutes."
+        }
+    ]
+}

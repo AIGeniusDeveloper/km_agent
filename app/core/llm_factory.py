@@ -3,7 +3,7 @@ from app.core.config import get_settings
 
 settings = get_settings()
 
-def get_llm(temperature: float = 0.0, model_name: str = "gemini-1.5-flash-001"):
+def get_llm(temperature: float = 0.0, model_name: str = "gemini-2.5-pro"):
     """
     Factory function to create a Gemini LLM instance.
     Defaults to Flash for speed, but can be overridden.

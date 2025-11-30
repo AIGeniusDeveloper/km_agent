@@ -22,7 +22,11 @@ class TaskSimulator:
         scenario_files = [
             "solar_scenario.json",
             "agritech_scenario.json",
-            "construction_scenario.json"
+            "construction_scenario.json",
+            "education_scenario.json",
+            "water_scenario.json",
+            "environment_scenario.json",
+            "transport_scenario.json"
         ]
         
         for filename in scenario_files:

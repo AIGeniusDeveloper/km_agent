@@ -8,22 +8,26 @@
 
 **KM-Agent** est un agent IA conversationnel, modulaire et multi-secteurs conçu pour fournir une assistance technique, un diagnostic et une formation professionnelle en Afrique.
 
-Ce MVP cible initialement quatre secteurs prioritaires : **Énergie Solaire**, **Mécanique**, **AgriTech** et **Construction**.
+Ce système couvre **8 secteurs prioritaires** : **Énergie Solaire**, **Mécanique**, **AgriTech**, **Construction**, **Éducation**, **Eau & Assainissement**, **Environnement** et **Transport**.
 
 ---
 
 ## 🚀 Fonctionnalités Clés
 
-### 🧠 1. Intelligence Multi-Secteurs (4 Secteurs)
+### 🧠 1. Intelligence Multi-Secteurs (8 Secteurs)
 - **Routage Intelligent** : Analyse la requête utilisateur pour identifier le secteur approprié.
 - **Secteurs Supportés** :
   - ⚡ **Énergie Solaire** : Installation, maintenance, diagnostic
   - 🔧 **Mécanique** : Moteurs diesel, maintenance préventive
   - 🌾 **AgriTech** : Analyse des sols, maladies des cultures, fertilisation
   - 🏗️ **ConstructionTech** : Matériaux, fondations, normes de sécurité
+  - 🏫 **Éducation/Formation** : Pédagogie, gestion de classe, évaluation
+  - 💧 **Eau & Assainissement** : Traitement, qualité, latrines, hygiène
+  - 🌳 **Environnement** : Compostage, reboisement, gestion déchets
+  - 🚗 **Transport** : Entretien véhicules, sécurité routière, logistique
 
 ### 📚 2. RAG (Retrieval-Augmented Generation)
-- **Base de Connaissances** : ChromaDB avec 4 secteurs documentés
+- **Base de Connaissances** : ChromaDB avec 8 secteurs documentés
 - **Réponses Contextuelles** : L'IA répond en se basant *uniquement* sur les documents vérifiés
 
 ### 💬 3. Mémoire Conversationnelle

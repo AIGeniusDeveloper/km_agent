@@ -14,7 +14,11 @@ def ingest_data():
         "solar": "solar_data.md",
         "mechanics": "mechanics_data.md",
         "agritech": "agritech_data.md",
-        "construction": "construction_data.md"
+        "construction": "construction_data.md",
+        "education": "education_data.md",
+        "water": "water_data.md",
+        "environment": "environment_data.md",
+        "transport": "transport_data.md"
     }
 
     documents = []
